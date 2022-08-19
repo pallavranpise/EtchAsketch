@@ -1,4 +1,5 @@
 let n = 9;
+const title = document.createElement('h1');
 const controls = document.createElement("div");
 const container = document.querySelector(".container");
 const play = document.createElement("button");
@@ -7,11 +8,14 @@ const increase = document.createElement("button");
 const mode = document.createElement("button");
 let grayMode = 0;
 
+title.textContent = 'etch a sketch';
 play.innerHTML = "play"
 increase.innerHTML = "increase";
 decrease.innerHTML = "decrease";
 mode.innerHTML = "mode";
+document.querySelector('body').insertBefore(title,container);
 document.querySelector('body').insertBefore(controls,container);
+
 controls.appendChild(play);
 controls.appendChild(increase);
 controls.appendChild(decrease);
