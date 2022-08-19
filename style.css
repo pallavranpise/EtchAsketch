@@ -7,8 +7,10 @@
     gap:0px;
 }
 
-.container button{
+.container div{
+box-sizing: border-box;
+/* background-color: #01b5fc; */
 /* background-color: aqua; */
-border: solid gray 1px;
+border: solid #363636 1px;
 }
 
