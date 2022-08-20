@@ -11,8 +11,8 @@ body{
 button{
     font-family: monospace;
     font-size: larger;
-    padding: 3px 15px;
-    margin:  10px 15px;
+    padding: 3px 5px;
+    margin:  10px 12px;
     border: solid black 2px;
 }
 h1{

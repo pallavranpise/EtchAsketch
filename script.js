@@ -6,13 +6,16 @@ const play = document.createElement("button");
 const decrease = document.createElement("button");
 const increase = document.createElement("button");
 const mode = document.createElement("button");
+const borderW = document.createElement("button");
 let grayMode = 0;
+let borderWidth = 0;
 
 title.textContent = 'etch a sketch';
 play.innerHTML = "play"
 increase.innerHTML = "increase";
 decrease.innerHTML = "decrease";
 mode.innerHTML = "mode";
+borderW.textContent = 'border'
 document.querySelector('body').insertBefore(title,container);
 document.querySelector('body').insertBefore(controls,container);
 
@@ -20,7 +23,7 @@ controls.appendChild(play);
 controls.appendChild(increase);
 controls.appendChild(decrease);
 controls.appendChild(mode);
-
+controls.appendChild(borderW);
 
 
 play.addEventListener("click", () => {makeGrid();});
@@ -35,6 +38,13 @@ mode.addEventListener("click",()=>{
     grayMode=(grayMode%3);
     makeGrid()
 });
+borderW.addEventListener("click",()=>{
+    if(borderWidth===1)borderW.innerHTML='0px';
+    if(borderWidth===0)borderW.innerHTML='1px';
+    borderWidth++;
+    borderWidth=(borderWidth%2);
+    makeGrid();
+});
 
 
 makeGrid();
@@ -45,7 +55,7 @@ function makeGrid(){
     for (let index = 1; index <= n*n; index++) {
         const mydiv = document.createElement("div");
         mydiv.classList.add('flipped');
-        mydiv.style.cssText=`width:${Math.floor(containerWidth/(n))}px;height:${Math.floor(containerWidth/(n))}px`;
+        mydiv.style.cssText=`width:${Math.floor(containerWidth/(n))}px;height:${Math.floor(containerWidth/(n))}px;border-width:${borderWidth}px`;
         container.appendChild(mydiv);       
     }
     flipped(grayMode);
